@@ -15,7 +15,15 @@ Tasks breakdown, status & issues
 	1.4: Create an app to trigger the simple chaincode deployed ===> INPROGRESS
 		Error 1: Deployment failed saying 'Cannot start the App main ... ' with ClassNotFoundErrors === Resolved ===> After having the jar files in the expected location (Need to understand better - rather than copying the files) ===> TOREVISIT
 		Error 2: 'Failed to enroll user admin' from this line of EnrollAdmin.java => Enrollment enrollment = caClient.enroll("admin", "adminpw", enrollmentRequestTLS); ==>INPROGRESS
-			Try 1: Use the certificates provided at fabric-sdk-java-master (Errors such as can't find the 'pem' files are gone, but still the user cannot be enrolled.
+			Try 1: Use the certificates provided at fabric-sdk-java-master  === Result ===> Errors such as can't find the 'pem' files are gone, but still the user cannot be enrolled.
+			Try 2: Follow the example here: https://github.com/IBM/blockchain-application-using-fabric-java-sdk 
+						=== Result 1 ===> Got error at deploying while running this 'java -cp blockchain-client.jar org.example.network.DeployInstantiateChaincode'. First four got SUCCESS and but the latter four got FAILURE (Error message: INFO: Chaincode fabcar on channel mychannel instantiation java.util.concurrent.CompletableFuture@2a1edad4[Completed exceptionally: java.lang.IllegalArgumentException: The proposal responses have 0 inconsistent groups with 4 that are invalid. Expected all to be consistent and none to be invalid.])
+						=== Ignore the error and continue 
+						=== java -cp blockchain-client.jar org.example.user.RegisterEnrollUser ===> Looks OK
+						=== java -cp blockchain-client.jar org.example.chaincode.invocation.InvokeChaincode ===> Got error (Sending transaction proposal on channel mychannel ... Proposal response is invalid)
+						=== java -cp blockchain-client.jar org.example.chaincode.invocation.QueryChaincode ===> Got similar errors (Querying queryAllCars on channel mychannel ... Proposal response is invalid)
+						=== stop the network and try ===> Same error at DeployInstantiateChaincode, this time, not contiue with the following steps
+						=== teardown the network and try ===> Same error and same action as above
 2: Implement the requirements ===> TODO
 	2.1: Basic requirements 
 		2.1.1: Sending 
