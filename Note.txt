@@ -26,7 +26,8 @@ Tasks breakdown, status & issues
 						=== teardown the network and try ===> Same error and same action as above
 						=== installed Go (because the fabcar is used) => X
 						=== Change DeployInstantiateChaincode.java to pass the parameter to fabcar instantiation (from  { "" } to null) => X
-						=== In place of fabcar, try to use 'accounttransfer'
+						=== In place of fabcar, try to use 'accounttransfer' => X
+						=== In fact, all three errors (1: Using test-network and accounttransfer and got issue while trying to run the app, 2: Using IBM sample and fabcar go, 3: Using IBM sample and accounttransfer) might be from the same cause => Error happens while calling org.hyperledger.fabric.sdk.Channel::sendInstantiationProposal passing the instance which is the instance of the chaincode (fabcar.go or accounttransfer)
 2: Implement the requirements ===> TODO
 	2.1: Basic requirements 
 		2.1.1: Sending 
