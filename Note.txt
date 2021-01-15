@@ -15,6 +15,7 @@ Tasks breakdown, status & issues
 	1.4: Create an app to trigger the simple chaincode deployed ===> INPROGRESS
 		Error 1: Deployment failed saying 'Cannot start the App main ... ' with ClassNotFoundErrors === Resolved ===> After having the jar files in the expected location (Need to understand better - rather than copying the files) ===> TOREVISIT
 		Error 2: 'Failed to enroll user admin' from this line of EnrollAdmin.java => Enrollment enrollment = caClient.enroll("admin", "adminpw", enrollmentRequestTLS); ==>INPROGRESS
+			Try 1: Use the certificates provided at fabric-sdk-java-master (Errors such as can't find the 'pem' files are gone, but still the user cannot be enrolled.
 2: Implement the requirements ===> TODO
 	2.1: Basic requirements 
 		2.1.1: Sending 
