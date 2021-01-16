@@ -29,6 +29,9 @@ Tasks breakdown, status & issues
 						=== In place of fabcar, try to use 'accounttransfer' => X
 						=== In fact, all three errors (1: Using test-network and accounttransfer and got issue while trying to run the app, 2: Using IBM sample and fabcar go, 3: Using IBM sample and accounttransfer) might be from the same cause => Error happens while calling org.hyperledger.fabric.sdk.Channel::sendInstantiationProposal passing the instance which is the instance of the chaincode (fabcar.go or accounttransfer)
 			Try 3: Trying all this on Linux (Ubuntu 18.04 Env) : Assumption => Why failed to run sendInstantiationProposal? It might be due to the security restrictions in Mac.
+						=== One new linux droplet was created in DO, install Java (upgrade to 15 because there is an error saying about Java version too low), instll cUrl, Maven, Gradle (wget to install this), Git, and Docker (also Docker compose). Then HLF 2.3 samples. 
+						=== It is similar to the first result in the above trying. Chaincodes were deployed and shown as two docker instances, however there was an error while trying to run the application code: java.lang.IllegalArgumentException: Identity not found in wallet: appUser
+						=== Problem might be due to something wrong in the applicaiton, or it is still possible that 'Deployment' looked 'done' but there might be some issues there as well.
 2: Implement the requirements ===> TODO
 	2.1: Basic requirements 
 		2.1.1: Sending 
