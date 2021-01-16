@@ -28,6 +28,7 @@ Tasks breakdown, status & issues
 						=== Change DeployInstantiateChaincode.java to pass the parameter to fabcar instantiation (from  { "" } to null) => X
 						=== In place of fabcar, try to use 'accounttransfer' => X
 						=== In fact, all three errors (1: Using test-network and accounttransfer and got issue while trying to run the app, 2: Using IBM sample and fabcar go, 3: Using IBM sample and accounttransfer) might be from the same cause => Error happens while calling org.hyperledger.fabric.sdk.Channel::sendInstantiationProposal passing the instance which is the instance of the chaincode (fabcar.go or accounttransfer)
+			Try 3: Trying all this on Linux (Ubuntu 18.04 Env) : Assumption => Why failed to run sendInstantiationProposal? It might be due to the security restrictions in Mac.
 2: Implement the requirements ===> TODO
 	2.1: Basic requirements 
 		2.1.1: Sending 
